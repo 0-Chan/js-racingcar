@@ -1,10 +1,13 @@
 import Car from '../src/Car';
 
 describe('자동차 클래스', () => {
-  const car = new Car('Hyundai');
+  let car;
   const expectedCarName = 'Hyundai';
+  beforeEach(() => {
+    car = new Car('Hyundai');
+  });
 
-  it('생성 시 인수로 전달된 string과 동일한 이름을 가진다.', () => {
+  it('인수로 전달된 string과 동일한 이름을 가진다.', () => {
     expect(car.name).toBe(expectedCarName);
   });
 
@@ -13,8 +16,6 @@ describe('자동차 클래스', () => {
   });
 
   it('전진할 수 있으며, 한 번에 1만큼 전진한다.', () => {
-    car.position = 0;
-
     car.forward();
 
     expect(car.position).toBe(1);
