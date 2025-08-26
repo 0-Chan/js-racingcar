@@ -1,12 +1,12 @@
 class Car {
+  name;
+  position = 0;
+
   constructor(name) {
     this.name = name;
-    this.position = 0;
   }
 
   forward() {
     this.position += 1;
   }
 }
-
-const myCar = new Car('Hyundai');
